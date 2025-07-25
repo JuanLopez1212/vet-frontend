@@ -1,4 +1,30 @@
 <h2>Registrar Mascota</h2>
-<form [formGroup] = "form" ngSubmit = "submit()">
-    
+<form [formGroup] = "form" (submit) = "onSubmit()">
+    <div class="field">
+        <label for = "pet-name">Nombre</label>
+        <input type = "text" formControlName = "name" id = "pet-name" value = "" placeholder="Nombre de la mascota">
+    </div>
+    <div class="field">
+        <label for = "pet-type">Tipo</label>
+        <input type="text" formControlName = "type" id = "pet-type" placeholder="Perro, Gato, ETC">
+    </div>
+    <div class="field">
+        <label for="pet-race">Raza</label>
+        <input type="text" formControlName = "race" id = "pet-race" placeholder="Labrador, Siamés, ETC">
+    </div>
+    <div class="field">
+         <label for="pet-age">Edad</label>
+        <input type="number" formControlName = "age" id = "pet-age" placeholder="1, 2, 3...">
+    </div>
+    <div class="field">
+        <label for="pet-owner">Dueño</label>
+        <select formControlName = "owner" id="pet-owner">
+            <option value="">Selected</option>
+
+            @for ( objOwner of owner; track $index ) {
+                <option [value]="objOwner._id">{{ objOwner.name }}</option>
+            }
+        </select>
+    </div>
+    <button type="submit" [disabled] = "form.invalid">Registrar</button>
 </form>

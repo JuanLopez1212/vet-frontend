@@ -1,0 +1,11 @@
+<h1>Lista de dueños</h1>
+
+<section>
+    @for ( owner of owners; track owner._id ) {
+        <div class="owner-card">
+            <h3>{{ owner.name }}</h3>
+            <p><strong>Teléfono</strong>{{ owner.phone }}</p>
+            <p><strong>Email</strong>{{ owner.email }}</p>
+        </div>
+    }
+</section>

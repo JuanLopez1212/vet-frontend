@@ -1,0 +1,39 @@
+<header class="navbar">
+    <h1 class="logo">Veterinary App</h1>
+    <nav>
+        <ul class="nav-links">
+            <li class="nav-item" routerLinkActive = "active">
+                <a routerLink = "/">Home</a>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive = "active">
+                <a>Pets =></a>
+                <ul class="submenu">
+                    <li><a href="#" routerLink = "/pets" routerLinkActive = "active">List</a></li>
+                    <li><a routerLink = "/pets/create" routerLinkActive = "active">Create</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a>Owners =></a>
+                <ul class="submenu">
+                    <li><a routerLink="/owners" routerLinkActive="active">List</a></li>
+                    <li><a routerLink="/owners/create" routerLinkActive="active">Create</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a>Vets =></a>
+                <ul class="submenu">
+                    <li><a routerLink="/vets" routerLinkActive="active">List</a></li>
+                    <li><a routerLink="/vets/create" routerLinkActive="active">Create</a></li>
+                </ul>
+             </li>
+             <li class="nav-item dropdown" routerLinkActive="active">
+                <a>Appointments ▾</a>
+                <ul class="submenu">
+                    <li><a routerLink="/dates" routerLinkActive="active">List</a></li>
+                    <li><a routerLink="/dates/create" routerLinkActive="active">Create</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</header>

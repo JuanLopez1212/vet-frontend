@@ -1,0 +1,9 @@
+<h2>Listado de Veterinarios</h2>
+
+@for (vet of vets; track vet._id) {
+  <div class="card">
+    <p><strong>Nombre:</strong> {{ vet.name }}</p>
+    <p><strong>Email:</strong> {{ vet.email }}</p>
+    <p><strong>Teléfono:</strong> {{ vet.phone }}</p>
+  </div>
+}

@@ -1,0 +1,12 @@
+<h2>Listado de citas</h2>
+
+@for ( date of dates; track date._id ) {
+    <div class="card">
+        <h3>{{ date.date | date: 'fullDate' }}</h3>
+        <p><strong>Mascota: </strong>{{ date.pet?.name }} </p>
+        <p><strong>Dueño: </strong>{{ date.pet.owner?.name }}</p>
+        <p><strong>Veterinario: </strong>{{ date.vet?.name }}</p>
+        <p><strong>Motivo: </strong>{{ date.reason }}</p>
+        <p><strong>Estado: </strong>{{ date.state }}</p>
+    </div>
+}

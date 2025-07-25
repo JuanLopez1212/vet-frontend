@@ -1,0 +1,16 @@
+<h2>Registrar Veterinario</h2>
+
+<form [formGroup]="form" (submit)="onSubmit()">
+    <label>Nombre:</label>
+    <input type="text" formControlName="name" />
+
+    <label>Email:</label>
+    <input type="text" formControlName="email" />
+    
+    <label>Teléfono:</label>
+    <input type="text" formControlName="phone" />
+
+    <button type="submit">Guardar</button>
+</form>
+
+

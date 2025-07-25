@@ -1,0 +1,51 @@
+<h2>Agendar Cita</h2>
+
+<form [formGroup] = "form" (submit) = "onSubmit()">
+    <div class="field">
+        <label for = "date-date">Fecha</label>
+        <input type = "date" formControlName = "date" id = "date-date">
+    </div>
+
+    <div class="field">
+        <label for="date-reason">Motivo</label>
+        <input type="text" formControlName = "reason" id = "date-reason">
+    </div>
+
+    <div class="field">
+        <label for="date-pet">Mascota</label>
+        <select formControlName = "pet" id="date-pet">
+            @for ( pet of pets; track pet._id ) {
+                <option [value]="pet._id">{{ pet.name }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="date-owner">Dueño</label>
+        <select formControlName = "owner" id="date-owner">
+            @for ( owner of owners; track owner._id ) {
+                <option [value] = "owner._id"> {{ owner.name }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="date-vet">Veterinario</label>
+        <select formControlName = "vet" id = "date-vet">
+            @for ( vet of vets; track vet._id ) {
+                <option [value]="vet._id">{{ vet.name }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="date-state">Estado</label>
+        <select formControlName = "state" id = "date-state">
+            <option value="pending">Pendiente</option>
+            <option value="complete">Completada</option>
+            <option value="cancelled">Cancelada</option>
+        </select>
+    </div>
+
+    <button type = 'submit'>Agendar</button>
+</form>
