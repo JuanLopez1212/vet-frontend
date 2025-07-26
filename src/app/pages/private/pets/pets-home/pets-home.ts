@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { PetsService } from '../../../../services/pets-service';
 import { JsonPipe } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pets-home',
-  imports: [ ],
+  imports: [ RouterModule ],
   templateUrl: './pets-home.html',
   styleUrl: './pets-home.css'
 })

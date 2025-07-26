@@ -15,10 +15,10 @@ import { JsonPipe } from '@angular/common';
 })
 
 export class CreateDate {
-   form!: any
-   pets: any[] = []
-   owners: any[] = []
-   vets: any[] = []
+  form!: any
+  pets: any[] = []
+  owners: any[] = []
+  vets: any[] = []
 
   constructor ( 
     private fb: FormBuilder, 

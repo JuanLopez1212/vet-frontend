@@ -20,9 +20,11 @@
                 <p>Edad: {{ pet.age }} años</p>
                 <p>Dueño: {{ pet.owner?.name }} </p>
                 <p>Telefono del dueño: {{ pet.owner?.phone }}</p>
+                <a [routerLink]="['/pets', pet._id, 'dates']">Ver Citas</a>
             }
         </div>
     }
+    
 </div>
 
 

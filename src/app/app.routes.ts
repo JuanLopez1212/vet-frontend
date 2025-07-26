@@ -7,6 +7,7 @@ import { DatesHome } from './pages/private/dates/dates-home/dates-home';
 import { CreateDate } from './pages/private/dates/create-date/create-date';
 import { VetHome } from './pages/private/vets/vet-home/vet-home';
 import { CreateVet } from './pages/private/vets/create-vet/create-vet';
+import { PetDates } from './pages/private/pets/pet-dates/pet-dates';
 
 export const routes: Routes = [
     { path: 'pets', component: PetsHome },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'dates', component: DatesHome },
     { path: 'dates/create', component: CreateDate },
     { path: 'vets', component: VetHome },
-    { path: 'vets/create', component: CreateVet }
+    { path: 'vets/create', component: CreateVet },
+    { path: 'pets/:id/dates', component: PetDates }
 ];

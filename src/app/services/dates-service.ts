@@ -11,6 +11,7 @@ export class DateService {
 
   getAllDates(): Observable<any[]> { return this.http.get<any[]>(this.baseUrl ) }
   getDateById(id: string): Observable<any> { return this.http.get(`${this.baseUrl}/${id}` ) }
+  getDatesByPetId ( id: string ): Observable<any[]> { return this.http.get<any[]>(`${this.baseUrl}/pet/${id}` ) }
   createDate(data: any): Observable<any> { return this.http.post(this.baseUrl, data ) }
   updateDate(id: string, data: any): Observable<any> { return this.http.put(`${this.baseUrl}/${id}`, data ) }
 }

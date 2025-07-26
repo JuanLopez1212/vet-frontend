@@ -1,0 +1,20 @@
+<h2>Detalles de {{ pet?.name }}</h2>
+
+<p><strong>Tipo: </strong>{{ pet?.type }}</p>
+<p><strong>Raza: </strong>{{ pet?.race }}</p>
+<p><strong>Edad: </strong>{{ pet?.age }}</p>
+<p><strong>Dueño: </strong>{{ pet?.owner?.name }}</p>
+
+<hr>
+<h3>Citas asignadas</h3>
+
+<ul>
+    @for ( date of dates; track date._id ) {
+        <li class="date-card">
+            <p><strong>Fecha: </strong>{{ date.date | date: 'shortDate' }}</p>
+            <p><strong>Motivo: </strong>{{ date.reason }}</p>
+            <p><strong>Veterinario: </strong>{{ date.vet?.name }}</p>
+            <p><strong>Estado: </strong>{{ date.state }}</p>
+        </li>
+    }
+</ul>
