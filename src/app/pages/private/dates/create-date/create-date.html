@@ -4,11 +4,21 @@
     <div class="field">
         <label for = "date-date">Fecha</label>
         <input type = "date" formControlName = "date" id = "date-date">
+        <div class="error">
+            @if ( form.get('date')?.invalid && form.get('date')?.touched) {
+                <span>La fecha es obligatoria</span>
+        }
+        </div>
     </div>
 
     <div class="field">
         <label for="date-reason">Motivo</label>
         <input type="text" formControlName = "reason" id = "date-reason">
+        <div class="error">
+            @if ( form.get('reason')?.invalid && form.get('reason')?.touched) {
+                <span>La razón es obligatoria</span>
+            }
+        </div>
     </div>
 
     <div class="field">
@@ -18,6 +28,11 @@
                 <option [value]="pet._id">{{ pet.name }}</option>
             }
         </select>
+        <div class="error">
+            @if ( form.get('pet')?.invalid && form.get('pet')?.touched) {
+                <span>Es obligatorio poner la mascota que tendrá la cita</span>
+            }
+        </div>
     </div>
 
     <div class="field">
@@ -27,6 +42,11 @@
                 <option [value] = "owner._id"> {{ owner.name }}</option>
             }
         </select>
+        <div class="error">
+            @if ( form.get('owner')?.invalid && form.get('owner')?.touched) {
+                <span>Es obligatorio poner el dueño de la mascota</span>
+            }
+        </div>
     </div>
 
     <div class="field">
@@ -36,6 +56,11 @@
                 <option [value]="vet._id">{{ vet.name }}</option>
             }
         </select>
+        <div class="error">
+            @if ( form.get('vet')?.invalid && form.get('vet')?.touched) {
+                <span>Es obligatorio poner el veterinario con el que desea la cita</span>
+            }
+        </div>
     </div>
 
     <div class="field">
@@ -45,6 +70,11 @@
             <option value="complete">Completada</option>
             <option value="cancelled">Cancelada</option>
         </select>
+        <div class="error">
+            @if ( form.get('state')?.invalid && form.get('state')?.touched) {
+                <span>Campo Obligatorio</span>
+            }
+        </div>
     </div>
 
     <button type = 'submit'>Agendar</button>

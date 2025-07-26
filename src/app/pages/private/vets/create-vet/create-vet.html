@@ -1,14 +1,35 @@
 <h2>Registrar Veterinario</h2>
 
 <form [formGroup]="form" (submit)="onSubmit()">
-    <label>Nombre:</label>
-    <input type="text" formControlName="name" />
+    <div class="field">
+        <label>Nombre: </label>
+        <input type="text" formControlName="name" />
+        <div class="error">
+            @if ( form.get('name')?.invalid && form.get('name')?.touched) {
+                <span>El nombre es obligatorio</span>
+            }
+        </div>
+    </div>
 
-    <label>Email:</label>
-    <input type="text" formControlName="email" />
-    
-    <label>Teléfono:</label>
-    <input type="text" formControlName="phone" />
+    <div class="field">
+        <label>Email: </label>
+        <input type="text" formControlName="email" />
+        <div class="error">
+            @if ( form.get('email')?.invalid && form.get('email')?.touched) {
+                <span>El correo es obligatorio</span>
+            }
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Teléfono: </label>
+        <input type="text" formControlName="phone" />
+        <div class="error">
+            @if ( form.get('phone')?.invalid && form.get('phone')?.touched) {
+                <span>El teléfono es obligatorio</span>
+            }
+        </div>
+    </div>
 
     <button type="submit">Guardar</button>
 </form>

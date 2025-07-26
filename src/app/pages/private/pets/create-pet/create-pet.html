@@ -1,23 +1,43 @@
 <h2>Registrar Mascota</h2>
 <form [formGroup] = "form" (submit) = "onSubmit()">
     <div class="field">
-        <label for = "pet-name">Nombre</label>
+        <label for = "pet-name">Nombre: </label>
         <input type = "text" formControlName = "name" id = "pet-name" value = "" placeholder="Nombre de la mascota">
+        <div class="error">
+            @if ( form.get('name')?.invalid && form.get('name')?.touched) {
+                <span>El nombre de la mascota es obligatorio</span>
+            }
+        </div>
     </div>
     <div class="field">
-        <label for = "pet-type">Tipo</label>
+        <label for = "pet-type">Tipo: </label>
         <input type="text" formControlName = "type" id = "pet-type" placeholder="Perro, Gato, ETC">
+        <div class="error">
+            @if ( form.get('type')?.invalid && form.get('type')?.touched) {
+                <span>El tipo de animal es obligatorio</span>
+            }
+        </div>
     </div>
     <div class="field">
-        <label for="pet-race">Raza</label>
+        <label for="pet-race">Raza: </label>
         <input type="text" formControlName = "race" id = "pet-race" placeholder="Labrador, Siamés, ETC">
+        <div class="error">
+            @if ( form.get('race')?.invalid && form.get('race')?.touched) {
+                <span>La raza de la mascota es obligatoria</span>
+            }
+        </div>
     </div>
     <div class="field">
-         <label for="pet-age">Edad</label>
+        <label for="pet-age">Edad: </label>
         <input type="number" formControlName = "age" id = "pet-age" placeholder="1, 2, 3...">
+        <div class="error">
+            @if ( form.get('age')?.invalid && form.get('age')?.touched) {
+                <span>La edad de la mascota es obligatoria</span>
+            }
+        </div>
     </div>
     <div class="field">
-        <label for="pet-owner">Dueño</label>
+        <label for="pet-owner">Dueño: </label>
         <select formControlName = "owner" id="pet-owner">
             <option value="">Selected</option>
 
@@ -25,6 +45,11 @@
                 <option [value]="objOwner._id">{{ objOwner.name }}</option>
             }
         </select>
+        <div class="error">
+            @if ( form.get('owner')?.invalid && form.get('owner')?.touched) {
+                <span>El dueño de la mascota es obligatorio</span>
+            }
+        </div>
     </div>
     <button type="submit" [disabled] = "form.invalid">Registrar</button>
 </form>

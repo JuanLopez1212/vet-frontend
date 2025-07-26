@@ -3,3 +3,17 @@ form {
     flex-direction: column;
     gap: 0.75rem;
 }
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin-top: 1rem;
+}
+
+.error {
+    margin-top: 0.5rem;
+    color: red;
+}

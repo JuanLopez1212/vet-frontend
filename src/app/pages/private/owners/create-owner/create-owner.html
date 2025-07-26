@@ -2,27 +2,27 @@
 
 <form [formGroup] = "form" (submit) = "onSubmit()">
     <div class="field">
-        <label for="owner-name">Nombre</label>
+        <label for="owner-name">Nombre: </label>
         <input type="text" formControlName = "name" id = "owner-name">
-        <div>
+        <div class="error">
             @if ( form.get('name')?.invalid && form.get('name')?.touched) {
-            <span>Campo Obligatorio</span>
-        }
-        </div>
-    </div>
-    <div class="field">
-        <label for="owner-phone">Teléfono</label>
-        <input type="text" formControlName = "phone" id = "owner-phone">
-        <div>
-            @if ( form.get( 'phone' )?.invalid && form.get( 'phone' )?.touched ) {
-                <span>Campo Obligatorio</span>
+                <span>El nombre es obligatorio</span>
             }
         </div>
     </div>
     <div class="field">
-        <label for="owner-email">Email</label>
+        <label for="owner-phone">Teléfono: </label>
+        <input type="text" formControlName = "phone" id = "owner-phone">
+        <div class="error">
+            @if ( form.get( 'phone' )?.invalid && form.get( 'phone' )?.touched ) {
+                <span>El teléfono es obligatorio</span>
+            }
+        </div>
+    </div>
+    <div class="field">
+        <label for="owner-email">Email: </label>
         <input type="text" formControlName = "email" id = "owner-email">
-        <div>
+        <div class="error">
             @if ( form.get( 'email' )?.invalid && form.get( 'email' )?.touched ) {
                 <span>Email Inválido</span>
             }
